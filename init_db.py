@@ -20,7 +20,7 @@ def init_database():
 	init_data(ids)
 
 def init_tables(tables, can_ids):
-	conn = sqlite3.connect("can_db.db")
+	conn = sqlite3.connect("../database.db")
 	cursor = conn.cursor()
 
 	# Master table for all devices on the can network
@@ -45,7 +45,7 @@ def init_tables(tables, can_ids):
 
 def init_data(ids):
 	# Insert all data in the master table base
-	conn = sqlite3.connect("can_db.db")
+	conn = sqlite3.connect("../database.db")
 	cursor = conn.cursor()
 
 	data = [(can_id, f"can device {can_id}") for can_id in ids]
